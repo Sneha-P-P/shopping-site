@@ -1,9 +1,7 @@
 
-        <br><br>
-
 <div class="panel panel-primary">
-  <div class="panel-heading" style="background-color: rgb(71, 71, 148); height: 45px">
-  <h3>  Product List</h3>
+  <div class="panel-heading">
+  <h3>{{pageTitle}} </h3>
   </div>
 
   <div class="panel-body">
@@ -38,19 +36,20 @@
           <tr *ngFor = "let product of products | productFilter: listFilter">
             <td> <img *ngIf = 'showImage'
                       [src]= 'product.imageUrl'
-                      [title] = 'product.productName | uppercase'
+                      [title] = 'product.productName | lowercase'
                       [style.width.px]= 'imageWidth'
                       [style.margin.px]= 'imageMargin' > </td>
-            <td>{{product.productName}}</td>
-            <td>{{product.productCode | lowercase}}</td>
+            <td><a [routerLink] = "['/product', product.productId]" >{{product.productName}}</a></td>
+            <td>{{product.productCode | uppercase}}</td>
             <td>{{product.releaseDate}}</td>
             <td>{{product.price | currency: 'INR': true: '1.2-2'}}</td>
-            <td>{{product.starRating}}</td>
+            <td> 
+              <app-star [rating] = "product.starRating" 
+                        (ratingClicked) = 'onRatingClicked($event)' > </app-star>
+            </td>
           </tr>
         </tbody>
       </table>
-    </div>
-
   </div>
 
 </div>
