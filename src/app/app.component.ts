@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `<div>
-  <br><br>
               <nav class="navbar navbar-default">
                 <div class= "container">
                   <a class = "navbar-brand">{{pageTitle}}</a>

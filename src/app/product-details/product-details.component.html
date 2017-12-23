@@ -2,4 +2,18 @@
   <div class="panel-heading">
     <h2>Product Details</h2>
   </div>
+  <br><br><br>
+  <div class="panel-body">
+    <div class="col-sm-6">
+      {{product.productName}}<br>
+      {{product.productCode}}<br>
+      {{product.releaseDate}}<br>
+      {{product.description}}<br>
+      {{product.price}}<br>
+      {{product.starRating}}<br>
+    </div>
+    <div class="col-sm-6">
+      <img src="{{product.imageUrl}}" alt="" srcset="" width="120px" height="180px">
+    </div>
+  </div>
 </div>

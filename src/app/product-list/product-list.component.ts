@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
   constructor( private _productService: ProductService) { }
 
   ngOnInit() {
-    this._productService.getProduct()
+    this._productService.getProducts()
     .subscribe(products => this.products = products,
     error => this.errorMessage = <any>error);
   }
